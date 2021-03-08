@@ -10,13 +10,13 @@ from glob import glob
 import os
 
 
-path = r'R:\Rh_Rasterdaten\Orthofotos\2005By'
+path = r'R:\Rh_Rasterdaten\Orthofotos\2006By'
 
 os.chdir(path)
 
 files = glob(path +os.sep + '*.sid')
 
-out = r'R:\Rh_Datenmanagement\Geodaten\Annex2\Orthoimagery\rgb\bayern\2005'
+out = r'R:\Rh_Datenmanagement\Geodaten\Annex2\Orthoimagery\rgb\bayern\2006'
 
 def main(file):
     try:
