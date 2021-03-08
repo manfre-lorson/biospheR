@@ -10,17 +10,17 @@ from glob import glob
 import os
 
 
-path = r'R:\Rh_Rasterdaten\Orthofotos\2006By'
+path = r'R:\Rh_Rasterdaten\Orthofotos\2012'
 
 os.chdir(path)
 
-files = glob(path +os.sep + '*.sid')
+files = glob(path +os.sep + '*.tif')
 
-out = r'R:\Rh_Datenmanagement\Geodaten\Annex2\Orthoimagery\rgb\bayern\2006'
+out = r'R:\Rh_Datenmanagement\Geodaten\Annex2\Orthoimagery\rgb\thueringen\2012'
 
 def main(file):
     try:
-        os.system('gdal_translate -a_srs EPSG:31468 -co compress=JPEG  \"{}\" \"{}\"'.format(file, out + os.sep + file.split(os.sep)[-1][:-3]+'tif'))
+        os.system('gdal_translate -a_srs EPSG:31468 -co compress=deflate  \"{}\" \"{}\"'.format(file, out + os.sep + file.split(os.sep)[-1][:-3]+'tif'))
     except:
         print('error: ', file)
         
